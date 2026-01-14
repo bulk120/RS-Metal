@@ -1,0 +1,1981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RS Metal - Premium Metal Products Wholesaler & Retailer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a365d;
+            --secondary: #d4af37;
+            --accent: #2d5aa0;
+            --light: #f8f9fa;
+            --dark: #1a202c;
+            --gray: #718096;
+            --success: #38a169;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background-color: #ffffff;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--dark);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles with Navigation */
+        header {
+            background-color: white;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-placeholder {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            font-weight: bold;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(26, 54, 93, 0.2);
+        }
+        
+        .logo-text h1 {
+            font-size: 26px;
+            margin-bottom: 5px;
+            color: var(--primary);
+            letter-spacing: 0.5px;
+        }
+        
+        .logo-text p {
+            color: var(--gray);
+            font-size: 13px;
+            font-weight: 500;
+        }
+        
+        /* Navigation Styles */
+        nav {
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            margin-right: 40px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 15px;
+            transition: all 0.3s;
+            position: relative;
+            padding: 8px 0;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .nav-links a.active {
+            color: var(--secondary);
+        }
+        
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--secondary);
+            border-radius: 2px;
+        }
+        
+        /* Contact Header */
+        .contact-header {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+        
+        .contact-header-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(212, 175, 55, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary);
+            font-size: 16px;
+        }
+        
+        .contact-text p:first-child {
+            font-size: 12px;
+            color: var(--gray);
+            margin-bottom: 2px;
+        }
+        
+        .contact-text p:last-child {
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--dark);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            font-size: 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--primary);
+            padding: 5px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 54, 93, 0.9), rgba(26, 54, 93, 0.95)), url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            text-align: center;
+            padding: 200px 20px 120px;
+            margin-top: 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z' fill='%23ffffff'%3E%3C/path%3E%3C/svg%3E");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        
+        .hero h2 {
+            font-size: 52px;
+            margin-bottom: 25px;
+            color: white;
+            line-height: 1.2;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 300;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background-color: var(--secondary);
+            color: var(--dark);
+            padding: 18px 35px;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s;
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+            border: 2px solid var(--secondary);
+        }
+        
+        .cta-button:hover {
+            background-color: transparent;
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+        }
+        
+        .cta-button.secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .cta-button.secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: white;
+        }
+        
+        /* Sections */
+        section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 40px;
+            display: inline-block;
+            padding-bottom: 20px;
+            position: relative;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 5px;
+            background-color: var(--secondary);
+            border-radius: 3px;
+        }
+        
+        .section-title.center-line {
+            position: relative;
+        }
+        
+        .section-title.center-line::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background-color: #e2e8f0;
+            z-index: -1;
+        }
+        
+        .section-title.center-line h2 {
+            background-color: white;
+            padding: 0 30px;
+        }
+        
+        /* About Section */
+        .about {
+            background-color: var(--light);
+            position: relative;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .about-text p {
+            margin-bottom: 25px;
+            font-size: 17px;
+            color: #4a5568;
+        }
+        
+        .highlight-box {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border-top: 5px solid var(--secondary);
+            margin-top: 30px;
+        }
+        
+        .highlight-box h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+        
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 25px 15px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+            transition: transform 0.3s;
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .stat-number {
+            font-size: 42px;
+            font-weight: 800;
+            color: var(--secondary);
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+        
+        .stat-label {
+            font-size: 16px;
+            color: var(--gray);
+            font-weight: 600;
+        }
+        
+        .about-image {
+            position: relative;
+        }
+        
+        .about-img-main {
+            height: 400px;
+            background: linear-gradient(135deg, #e2e8f0, #cbd5e0);
+            border-radius: 15px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-img-main i {
+            font-size: 120px;
+            color: var(--primary);
+            opacity: 0.7;
+        }
+        
+        .certificate-badge {
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            width: 280px;
+            border-left: 5px solid var(--success);
+        }
+        
+        .certificate-badge h4 {
+            color: var(--success);
+            margin-bottom: 10px;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .certificate-badge p {
+            font-size: 14px;
+            margin-bottom: 5px;
+            color: var(--gray);
+        }
+        
+        /* Products Section */
+        .products {
+            background-color: white;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+            border-color: var(--secondary);
+        }
+        
+        .product-img {
+            height: 220px;
+            background: linear-gradient(135deg, #f7fafc, #edf2f7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-img::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
+        }
+        
+        .product-img i {
+            font-size: 80px;
+            color: var(--primary);
+            opacity: 0.8;
+        }
+        
+        .product-info {
+            padding: 30px;
+        }
+        
+        .product-info h3 {
+            margin-bottom: 15px;
+            font-size: 22px;
+            color: var(--primary);
+        }
+        
+        .product-info p {
+            color: var(--gray);
+            margin-bottom: 20px;
+            font-size: 15px;
+        }
+        
+        .product-features {
+            list-style: none;
+            margin-top: 20px;
+        }
+        
+        .product-features li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+        }
+        
+        .product-features i {
+            color: var(--success);
+            font-size: 14px;
+        }
+        
+        /* Industries Section */
+        .industries {
+            background-color: var(--light);
+        }
+        
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .industry-card {
+            background: white;
+            padding: 35px 25px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+            border-bottom: 4px solid transparent;
+        }
+        
+        .industry-card:hover {
+            transform: translateY(-10px);
+            border-bottom-color: var(--secondary);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .industry-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(45, 90, 160, 0.1));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 28px;
+            color: var(--secondary);
+        }
+        
+        .industry-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 25px;
+            font-size: 28px;
+            color: var(--primary);
+        }
+        
+        .contact-info > p {
+            color: var(--gray);
+            margin-bottom: 30px;
+            font-size: 17px;
+        }
+        
+        .contact-details {
+            margin-top: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .contact-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .contact-icon-large {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(212, 175, 55, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            color: var(--secondary);
+            font-size: 22px;
+            flex-shrink: 0;
+        }
+        
+        .contact-text-large h4 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+        
+        .contact-text-large p {
+            color: var(--gray);
+            font-size: 16px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 40px;
+        }
+        
+        .social-link {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(212, 175, 55, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary);
+            font-size: 20px;
+            transition: all 0.3s;
+        }
+        
+        .social-link:hover {
+            background-color: var(--secondary);
+            color: white;
+            transform: translateY(-5px);
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+            border-top: 5px solid var(--secondary);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 16px 20px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(135deg, var(--secondary), #e6c34e);
+            color: var(--dark);
+            border: none;
+            padding: 18px 40px;
+            font-size: 17px;
+            font-weight: 700;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+        }
+        
+        /* Map Section */
+        .map-section {
+            padding: 0;
+            height: 400px;
+        }
+        
+        .map-container {
+            width: 100%;
+            height: 100%;
+            background-color: #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        
+        .map-container i {
+            font-size: 80px;
+            color: var(--primary);
+            margin-bottom: 20px;
+            opacity: 0.7;
+        }
+        
+        .map-container p {
+            color: var(--gray);
+            font-size: 18px;
+        }
+        
+        /* Content Sections for Navigation */
+        .page-section {
+            display: block;
+        }
+        
+        .page-section.hidden {
+            display: none;
+        }
+        
+        .content-block {
+            margin-bottom: 60px;
+        }
+        
+        .content-block h2 {
+            font-size: 32px;
+            margin-bottom: 25px;
+            color: var(--primary);
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .content-block h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 70px;
+            height: 4px;
+            background-color: var(--secondary);
+            border-radius: 2px;
+        }
+        
+        .content-block p {
+            margin-bottom: 20px;
+            color: #4a5568;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+        
+        .content-block ul, .content-block ol {
+            margin-left: 25px;
+            margin-bottom: 25px;
+            color: #4a5568;
+        }
+        
+        .content-block li {
+            margin-bottom: 10px;
+            line-height: 1.7;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .team-member {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            padding: 30px;
+        }
+        
+        .team-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #e2e8f0, #cbd5e0);
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            color: var(--primary);
+        }
+        
+        .team-member h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .team-member p {
+            color: var(--gray);
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        
+        .privacy-list {
+            background: var(--light);
+            padding: 30px;
+            border-radius: 12px;
+            margin-top: 30px;
+        }
+        
+        .privacy-list h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 22px;
+        }
+        
+        .privacy-list ul {
+            margin-left: 20px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 80px 0 30px;
+            position: relative;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-logo h3 {
+            color: white;
+            font-size: 26px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo p {
+            color: #a0aec0;
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+        
+        .footer-links h4,
+        .footer-contact h4,
+        .footer-hours h4 {
+            color: white;
+            margin-bottom: 25px;
+            font-size: 20px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .footer-links h4::after,
+        .footer-contact h4::after,
+        .footer-hours h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--secondary);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+        
+        .footer-links a {
+            color: #a0aec0;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+            transform: translateX(5px);
+        }
+        
+        .footer-contact p {
+            color: #a0aec0;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        
+        .footer-contact i {
+            color: var(--secondary);
+            margin-top: 4px;
+        }
+        
+        .footer-hours p {
+            color: #a0aec0;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .footer-hours span {
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #a0aec0;
+            font-size: 14px;
+        }
+        
+        /* Mobile Navigation */
+        .mobile-nav {
+            position: fixed;
+            top: 100px;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            display: none;
+            z-index: 999;
+        }
+        
+        .mobile-nav.active {
+            display: block;
+        }
+        
+        .mobile-nav ul {
+            list-style: none;
+            flex-direction: column;
+            gap: 0;
+        }
+        
+        .mobile-nav li {
+            margin-bottom: 20px;
+        }
+        
+        .mobile-nav a {
+            font-size: 18px;
+            display: block;
+            padding: 10px 0;
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+        }
+        
+        .mobile-nav a.active {
+            color: var(--secondary);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1100px) {
+            .contact-header {
+                display: none;
+            }
+            
+            .nav-links {
+                margin-right: 20px;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .about-content,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h2 {
+                font-size: 42px;
+            }
+            
+            .certificate-badge {
+                position: relative;
+                bottom: auto;
+                right: auto;
+                margin-top: 40px;
+                width: 100%;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                padding: 160px 20px 100px;
+                margin-top: 100px;
+                background-attachment: scroll;
+            }
+            
+            .hero h2 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-button {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .section-title h2 {
+                font-size: 32px;
+            }
+            
+            .form-control, .submit-btn {
+                padding: 14px 18px;
+            }
+            
+            .stats-container {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo-text h1 {
+                font-size: 22px;
+            }
+            
+            .hero h2 {
+                font-size: 30px;
+            }
+            
+            .section-title h2 {
+                font-size: 28px;
+            }
+            
+            .content-block h2 {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <div class="container header-container">
+            <div class="logo-area">
+                <div class="logo-placeholder">
+                    <i class="fas fa-industry"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>RS Metal</h1>
+                    <p>Wholesaler & Retailer of Metal Products</p>
+                </div>
+            </div>
+            
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#" class="nav-link active" data-page="home">Home</a></li>
+                    <li><a href="#" class="nav-link" data-page="about">About Us</a></li>
+                    <li><a href="#" class="nav-link" data-page="contact">Contact</a></li>
+                    <li><a href="#" class="nav-link" data-page="privacy">Privacy Policy</a></li>
+                </ul>
+                
+                <div class="contact-header">
+                    <div class="contact-header-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <p>Call Us</p>
+                            <p>96195 19627</p>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div class="mobile-nav" id="mobileNav">
+            <ul>
+                <li><a href="#" class="nav-link active" data-page="home">Home</a></li>
+                <li><a href="#" class="nav-link" data-page="about">About Us</a></li>
+                <li><a href="#" class="nav-link" data-page="contact">Contact</a></li>
+                <li><a href="#" class="nav-link" data-page="privacy">Privacy Policy</a></li>
+            </ul>
+            
+            <div class="contact-details" style="padding: 20px 0 0; border-top: 1px solid #e2e8f0; margin-top: 20px;">
+                <div class="contact-item">
+                    <div class="contact-icon-large">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="contact-text-large">
+                        <h4>Call Us</h4>
+                        <p>96195 19627</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon-large">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-text-large">
+                        <h4>Email Us</h4>
+                        <p>mehtadeepak671@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Home Page Section -->
+        <section id="home-page" class="page-section">
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="container">
+                    <h2>Premium Metal Solutions for Industrial Excellence</h2>
+                    <p>RS Metal is a trusted name in the metal trading industry, supplying high-quality steel and metal products to meet diverse industrial and commercial needs. Based in Mumbai, Maharashtra.</p>
+                    <div class="cta-buttons">
+                        <a href="#" class="cta-button" data-page="contact">
+                            <i class="fas fa-phone-alt"></i> Request Quote
+                        </a>
+                        <a href="#" class="cta-button secondary" data-page="about">
+                            <i class="fas fa-boxes"></i> Learn More
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section class="about">
+                <div class="container">
+                    <div class="section-title center-line">
+                        <h2>About RS Metal</h2>
+                    </div>
+                    
+                    <div class="about-content">
+                        <div class="about-text">
+                            <p>RS Metal, owned and operated by Mr. Deepak R. Mehta, is a Mumbai-based metal trading firm established to deliver dependable metal solutions to the Indian market. Since our GST registration in 2017, we have been actively engaged as a wholesaler and retailer of premium-grade metal products.</p>
+                            
+                            <div class="highlight-box">
+                                <h3><i class="fas fa-bullseye"></i> Our Mission</h3>
+                                <p>To provide consistent material quality, prompt service, and trustworthy business practices, making us a reliable partner for all metal-related requirements.</p>
+                            </div>
+                            
+                            <p>Our product range includes Stainless Steel and Mild Steel bars, pipes, wires, and concrete cutters, catering to construction, fabrication, and industrial applications. We believe in maintaining high standards of quality, competitive pricing, and customer satisfaction.</p>
+                            
+                            <div class="stats-container">
+                                <div class="stat-item">
+                                    <div class="stat-number">6+</div>
+                                    <div class="stat-label">Years Experience</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">500+</div>
+                                    <div class="stat-label">Clients Served</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">100%</div>
+                                    <div class="stat-label">Quality Assurance</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="about-image">
+                            <div class="about-img-main">
+                                <i class="fas fa-hard-hat"></i>
+                            </div>
+                            
+                            <div class="certificate-badge">
+                                <h4><i class="fas fa-certificate"></i> GST Verified Business</h4>
+                                <p><strong>GSTIN:</strong> 27AABPM8150C1ZZ</p>
+                                <p><strong>Registration Date:</strong> 01 July 2017</p>
+                                <p><strong>Location:</strong> Mumbai, Maharashtra</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Products Section -->
+            <section class="products">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>Our Products</h2>
+                    </div>
+                    
+                    <div class="products-grid">
+                        <div class="product-card">
+                            <div class="product-img">
+                                <i class="fas fa-grip-lines-vertical"></i>
+                            </div>
+                            <div class="product-info">
+                                <h3>Steel Bars & Rods</h3>
+                                <p>High-quality steel bars and rods for construction and industrial applications, available in various grades and sizes including TMT bars.</p>
+                                <ul class="product-features">
+                                    <li><i class="fas fa-check-circle"></i> Various sizes & grades</li>
+                                    <li><i class="fas fa-check-circle"></i> ISI certified quality</li>
+                                    <li><i class="fas fa-check-circle"></i> Corrosion resistant</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card">
+                            <div class="product-img">
+                                <i class="fas fa-pipe"></i>
+                            </div>
+                            <div class="product-info">
+                                <h3>Steel Pipes & Tubes</h3>
+                                <p>Durable steel pipes and tubes suitable for plumbing, construction, industrial piping systems, and structural applications.</p>
+                                <ul class="product-features">
+                                    <li><i class="fas fa-check-circle"></i> Seamless & welded options</li>
+                                    <li><i class="fas fa-check-circle"></i> Various thicknesses</li>
+                                    <li><i class="fas fa-check-circle"></i> Custom cutting available</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card">
+                            <div class="product-img">
+                                <i class="fas fa-wrench"></i>
+                            </div>
+                            <div class="product-info">
+                                <h3>Steel Wires & Cables</h3>
+                                <p>Premium steel wires and cables for construction, fencing, binding, and various industrial applications with high tensile strength.</p>
+                                <ul class="product-features">
+                                    <li><i class="fas fa-check-circle"></i> High tensile strength</li>
+                                    <li><i class="fas fa-check-circle"></i> Galvanized options</li>
+                                    <li><i class="fas fa-check-circle"></i> Multiple gauges available</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card">
+                            <div class="product-img">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <div class="product-info">
+                                <h3>MS & SS Products</h3>
+                                <p>Mild Steel and Stainless Steel products including sheets, plates, angles, channels, and fabricated components for diverse needs.</p>
+                                <ul class="product-features">
+                                    <li><i class="fas fa-check-circle"></i> MS & SS varieties</li>
+                                    <li><i class="fas fa-check-circle"></i> Sheets, plates, angles</li>
+                                    <li><i class="fas fa-check-circle"></i> Custom fabrication</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Industries We Serve -->
+            <section class="industries">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>Industries We Serve</h2>
+                    </div>
+                    
+                    <div class="industries-grid">
+                        <div class="industry-card">
+                            <div class="industry-icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <h3>Construction</h3>
+                            <p>Providing materials for residential, commercial, and infrastructure projects</p>
+                        </div>
+                        
+                        <div class="industry-card">
+                            <div class="industry-icon">
+                                <i class="fas fa-industry"></i>
+                            </div>
+                            <h3>Manufacturing</h3>
+                            <p>Supplying raw materials for fabrication and production units</p>
+                        </div>
+                        
+                        <div class="industry-card">
+                            <div class="industry-icon">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <h3>Fabrication</h3>
+                            <p>Materials for metal fabrication workshops and units</p>
+                        </div>
+                        
+                        <div class="industry-card">
+                            <div class="industry-icon">
+                                <i class="fas fa-hard-hat"></i>
+                            </div>
+                            <h3>Infrastructure</h3>
+                            <p>Supplying for bridges, roads, and public infrastructure projects</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- About Us Page Section -->
+        <section id="about-page" class="page-section hidden">
+            <div class="hero" style="background: linear-gradient(rgba(26, 54, 93, 0.9), rgba(26, 54, 93, 0.95)), url('https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');">
+                <div class="container">
+                    <h2>About RS Metal</h2>
+                    <p>Learn about our journey, values, and commitment to quality in the metal trading industry</p>
+                </div>
+            </div>
+            
+            <div class="content-section">
+                <div class="container">
+                    <div class="content-block">
+                        <h2>Our Story</h2>
+                        <p>RS Metal was established with a vision to provide reliable and high-quality metal products to the growing Indian market. Founded by Mr. Deepak R. Mehta, the company began operations in Mumbai, Maharashtra, and has since grown to become a trusted name in the metal trading industry.</p>
+                        <p>With our GST registration in July 2017, we formalized our commitment to transparent business practices and compliance with Indian regulations. Over the years, we have built strong relationships with suppliers, manufacturers, and clients across various industries.</p>
+                    </div>
+                    
+                    <div class="content-block">
+                        <h2>Our Mission & Vision</h2>
+                        <p><strong>Mission:</strong> To be the most reliable supplier of metal products by ensuring consistent quality, competitive pricing, and exceptional customer service. We aim to build long-term partnerships with our clients based on trust and mutual growth.</p>
+                        <p><strong>Vision:</strong> To become the preferred metal trading partner across India, known for our quality products, ethical business practices, and commitment to customer satisfaction.</p>
+                    </div>
+                    
+                    <div class="content-block">
+                        <h2>Our Values</h2>
+                        <ul>
+                            <li><strong>Quality Excellence:</strong> We source only the highest quality materials from reputable manufacturers and suppliers.</li>
+                            <li><strong>Customer Focus:</strong> Our clients are at the center of everything we do. We work to understand their needs and provide tailored solutions.</li>
+                            <li><strong>Integrity & Transparency:</strong> We believe in honest business practices, clear communication, and transparent pricing.</li>
+                            <li><strong>Reliability:</strong> We ensure timely delivery and consistent product quality with every order.</li>
+                            <li><strong>Innovation:</strong> We continuously improve our processes and explore new products to better serve our clients.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="content-block">
+                        <h2>Why Choose RS Metal?</h2>
+                        <div class="highlight-box" style="margin-top: 20px;">
+                            <h3><i class="fas fa-award"></i> Quality Assurance</h3>
+                            <p>All our products undergo rigorous quality checks to ensure they meet industry standards and specifications. We maintain detailed records of material grades, certifications, and test reports.</p>
+                        </div>
+                        
+                        <div class="highlight-box" style="margin-top: 20px;">
+                            <h3><i class="fas fa-shipping-fast"></i> Timely Delivery</h3>
+                            <p>We understand the importance of timelines in industrial projects. Our efficient logistics network ensures prompt delivery of materials to your site, minimizing downtime.</p>
+                        </div>
+                        
+                        <div class="highlight-box" style="margin-top: 20px;">
+                            <h3><i class="fas fa-handshake"></i> Customer Partnership</h3>
+                            <p>We view our clients as long-term partners. Our team provides personalized support, technical guidance, and after-sales service to ensure complete satisfaction.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="content-block">
+                        <h2>Our Team</h2>
+                        <div class="team-grid">
+                            <div class="team-member">
+                                <div class="team-img">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                                <h3>Mr. Deepak R. Mehta</h3>
+                                <p>Proprietor & Founder</p>
+                                <p>With extensive experience in the metal trading industry, Mr. Mehta leads RS Metal with a focus on quality and customer relationships.</p>
+                            </div>
+                            
+                            <div class="team-member">
+                                <div class="team-img">
+                                    <i class="fas fa-user-cog"></i>
+                                </div>
+                                <h3>Operations Team</h3>
+                                <p>Logistics & Supply Chain</p>
+                                <p>Our dedicated operations team ensures seamless procurement, quality checks, and timely delivery of all orders.</p>
+                            </div>
+                            
+                            <div class="team-member">
+                                <div class="team-img">
+                                    <i class="fas fa-headset"></i>
+                                </div>
+                                <h3>Customer Support</h3>
+                                <p>Client Relations</p>
+                                <p>Our customer support team is always ready to assist with inquiries, orders, and after-sales service.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Us Page Section -->
+        <section id="contact-page" class="page-section hidden">
+            <div class="hero" style="background: linear-gradient(rgba(26, 54, 93, 0.9), rgba(26, 54, 93, 0.95)), url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');">
+                <div class="container">
+                    <h2>Contact Us</h2>
+                    <p>Get in touch with RS Metal for inquiries, quotes, or any assistance with our products</p>
+                </div>
+            </div>
+            
+            <div class="content-section">
+                <div class="container">
+                    <div class="contact-container">
+                        <div class="contact-info">
+                            <h3>Contact Information</h3>
+                            <p>We're here to help with your metal product needs. Reach out to us through any of the following channels:</p>
+                            
+                            <div class="contact-details">
+                                <div class="contact-item">
+                                    <div class="contact-icon-large">
+                                        <i class="fas fa-phone-alt"></i>
+                                    </div>
+                                    <div class="contact-text-large">
+                                        <h4>Call Us</h4>
+                                        <p>96195 19627</p>
+                                        <p style="font-size: 14px; margin-top: 5px;">Monday - Saturday, 9:00 AM - 7:00 PM</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="contact-item">
+                                    <div class="contact-icon-large">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div class="contact-text-large">
+                                        <h4>Email Us</h4>
+                                        <p>mehtadeepak671@gmail.com</p>
+                                        <p style="font-size: 14px; margin-top: 5px;">We typically respond within 24 hours</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="contact-item">
+                                    <div class="contact-icon-large">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <div class="contact-text-large">
+                                        <h4>Our Location</h4>
+                                        <p>Mumbai, Maharashtra, India</p>
+                                        <p style="font-size: 14px; margin-top: 5px;">Serving clients across India</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="contact-item">
+                                    <div class="contact-icon-large">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <div class="contact-text-large">
+                                        <h4>Business Hours</h4>
+                                        <p>Monday - Saturday: 9:00 AM - 7:00 PM</p>
+                                        <p style="font-size: 14px; margin-top: 5px;">Sunday: Closed</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="highlight-box" style="margin-top: 30px;">
+                                <h3><i class="fas fa-info-circle"></i> For Quick Inquiries</h3>
+                                <p>For fastest response, please include the following information in your inquiry:</p>
+                                <ul style="margin-top: 10px; margin-left: 20px;">
+                                    <li>Product type and specifications</li>
+                                    <li>Required quantity</li>
+                                    <li>Delivery location</li>
+                                    <li>Any specific requirements</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="social-links">
+                                <a href="https://wa.me/919619519627" class="social-link" target="_blank">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                                <a href="mailto:mehtadeepak671@gmail.com" class="social-link">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                                <a href="tel:9619519627" class="social-link">
+                                    <i class="fas fa-phone"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-form">
+                            <h3 style="margin-bottom: 25px; color: var(--primary);">Send Us a Message</h3>
+                            <form id="contactPageForm">
+                                <div class="form-group">
+                                    <label for="contact-name">Full Name *</label>
+                                    <input type="text" id="contact-name" class="form-control" placeholder="Enter your name" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="contact-email">Email Address *</label>
+                                    <input type="email" id="contact-email" class="form-control" placeholder="Enter your email" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="contact-phone">Phone Number *</label>
+                                    <input type="tel" id="contact-phone" class="form-control" placeholder="Enter your phone number" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="contact-company">Company Name</label>
+                                    <input type="text" id="contact-company" class="form-control" placeholder="Your company name (if applicable)">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="contact-subject">Subject *</label>
+                                    <select id="contact-subject" class="form-control" required>
+                                        <option value="">Select a subject</option>
+                                        <option value="quote">Request for Quote</option>
+                                        <option value="product-info">Product Information</option>
+                                        <option value="order">Place an Order</option>
+                                        <option value="support">Customer Support</option>
+                                        <option value="other">Other Inquiry</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="contact-message">Message *</label>
+                                    <textarea id="contact-message" class="form-control" placeholder="Please provide details about your inquiry..." rows="5" required></textarea>
+                                </div>
+                                
+                                <button type="submit" class="submit-btn">
+                                    <i class="fas fa-paper-plane"></i> Send Message
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Map Section -->
+            <section class="map-section">
+                <div class="map-container">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <p>Based in Mumbai, Maharashtra - Serving Clients Across India</p>
+                    <p style="margin-top: 10px; font-size: 16px;">Contact us for specific location details and visiting hours</p>
+                </div>
+            </section>
+        </section>
+
+        <!-- Privacy Policy Page Section -->
+        <section id="privacy-page" class="page-section hidden">
+            <div class="hero" style="background: linear-gradient(rgba(26, 54, 93, 0.9), rgba(26, 54, 93, 0.95)), url('https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');">
+                <div class="container">
+                    <h2>Privacy Policy</h2>
+                    <p>Our commitment to protecting your personal information and data privacy</p>
+                </div>
+            </div>
+            
+            <div class="content-section">
+                <div class="container">
+                    <div class="content-block">
+                        <h2>Introduction</h2>
+                        <p>At RS Metal, we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or interact with us for business purposes.</p>
+                        <p>By using our website or providing us with your personal information, you agree to the terms of this Privacy Policy.</p>
+                    </div>
+                    
+                    <div class="content-block">
+                        <h2>Information We Collect</h2>
+                        <p>We may collect the following types of information:</p>
+                        
+                        <div class="privacy-list">
+                            <h3>Personal Information</h3>
+                            <ul>
+                                <li><strong>Contact Information:</strong> Name, email address, phone number, company name, and address</li>
+                                <li><strong>Business Information:</strong> GST details, business type, and industry</li>
+                                <li><strong>Communication Data:</strong> Correspondence with us through email, phone, or contact forms</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="privacy-list">
+                            <h3>Automatically Collected Information</h3>
+                            <ul>
+                                <li><strong>Usage Data:</strong> Information about how you interact with our website</li>
+                                <li><strong>Device Information:</strong> IP address, browser type, operating system, and device identifiers</li>
+                                <li><strong>Cookies:</strong> Small data files stored on your device to enhance website functionality</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="content-block">
+                        <h2>How We Use Your Information</h2>
+                        <p>We use the collected information for the following purposes:</p>
+                        <ul>
+                            <li>To provide and maintain our services</li>
+                            <li>To process your inquiries, requests, and orders</li>
+                            <li>To communicate with you about our products, services, and promotions</li>
+                            <li>To improve our website, products, and customer service</li>
+                            <li>To comply with legal obligations and business requirements</li>
+                            <li>To prevent fraud and enhance security</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="content-block">
+                        <h2>Information Sharing and Disclosure</h2>
+                        <p>We do not sell, trade, or rent your personal information to third parties. We may share your information in the following circumstances:</p>
+                        
+                        <div class="privacy-list">
+                            <h3>Service Providers</h3>
+                            <p>We may share information with trusted third-party service providers who assist us in operating our business, such as:</p>
+                            <ul>
+                                <li>Logistics and delivery partners</li>
+                                <li>Payment processors</li>
+                                <li>IT service providers</li>
+                            </ul>
+                            <p>These providers are contractually obligated to protect your information and use it only for the services they provide to us.</p>
+                        </div>
+                        
+                        <div class="privacy-list">
+                            <h3>Legal Requirements</h3>
+                            <p>We may disclose your information if required by law or in response to:</p>
+                            <ul>
+                                <li>Court orders or legal processes</li>
+                                <li>Government requests</li>
+                                <li>To protect our rights, property, or safety</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="content-block">
+                        <h2>Data Security</h2>
+                        <p>We implement appropriate technical and organizational security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. These measures include:</p>
+                        <ul>
+                            <li>Secure data storage and transmission</li>
+                            <li>Access controls and authentication</li>
+                            <li>Regular security assessments</li>
+                            <li>Employee training on data protection</li>
+                        </ul>
+                        <p>However, no method of transmission over the internet or electronic storage is 100% secure, and we cannot guarantee absolute security.</p>
+                    </div>
+                    
+                    <div class="content-block">
+                        <h2>Your Rights</h2>
+                        <p>Depending on your location and applicable laws, you may have the following rights regarding your personal information:</p>
+                        <ul>
+                            <li><strong>Access:</strong> Request access to the personal information we hold about you</li>
+                            <li><strong>Correction:</strong> Request correction of inaccurate or incomplete information</li>
+                            <li><strong>Deletion:</strong> Request deletion of your personal information under certain circumstances</li>
+                            <li><strong>Objection:</strong> Object to processing of your personal information</li>
+                            <li><strong>Restriction:</strong> Request restriction of processing your personal information</li>
+                            <li><strong>Portability:</strong> Request transfer of your information to another organization</li>
+                        </ul>
+                        <p>To exercise these rights, please contact us using the contact information provided in this policy.</p>
+                    </div>
+                    
+                    <div class="content-block">
+                        <h2>Business Information and GST</h2>
+                        <p>As a registered business entity under GST (GSTIN: 27AABPM8150C1ZZ), we collect and maintain business information as required by Indian laws and regulations. This includes:</p>
+                        <ul>
+                            <li>Business registration details</li>
+                            <li>Tax identification numbers</li>
+                            <li>Transaction records for compliance purposes</li>
+                            <li>Invoice and billing information</li>
+                        </ul>
+                        <p>This information is maintained for the period required by law and used for legal compliance, tax purposes, and business operations.</p>
+                    </div>
+                    
+                    <div class="content-block">
+                        <h2>Contact Us</h2>
+                        <p>If you have any questions about this Privacy Policy or our data practices, please contact us:</p>
+                        
+                        <div class="contact-details" style="margin-top: 20px;">
+                            <div class="contact-item">
+                                <div class="contact-icon-large">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-text-large">
+                                    <h4>Email</h4>
+                                    <p>mehtadeepak671@gmail.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon-large">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div class="contact-text-large">
+                                    <h4>Phone</h4>
+                                    <p>96195 19627</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon-large">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact-text-large">
+                                    <h4>Address</h4>
+                                    <p>Mumbai, Maharashtra, India</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>RS Metal</h3>
+                    <p>A trusted name in metal trading, supplying high-quality steel and metal products for industrial and commercial needs across India since 2017.</p>
+                    <div class="social-links" style="margin-top: 20px;">
+                        <a href="https://wa.me/919619519627" class="social-link" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="mailto:mehtadeepak671@gmail.com" class="social-link">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="tel:9619519627" class="social-link">
+                            <i class="fas fa-phone"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#" class="footer-nav-link" data-page="home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#" class="footer-nav-link" data-page="about"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="#" class="footer-nav-link" data-page="contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                        <li><a href="#" class="footer-nav-link" data-page="privacy"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-phone-alt"></i> 96195 19627</p>
+                    <p><i class="fas fa-envelope"></i> mehtadeepak671@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Mumbai, Maharashtra, India</p>
+                    <p><i class="fas fa-file-contract"></i> GSTIN: 27AABPM8150C1ZZ</p>
+                </div>
+                
+                <div class="footer-hours">
+                    <h4>Business Hours</h4>
+                    <p>Monday - Friday <span>9:00 AM - 7:00 PM</span></p>
+                    <p>Saturday <span>9:00 AM - 5:00 PM</span></p>
+                    <p>Sunday <span>Closed</span></p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 RS Metal. All Rights Reserved. | GST Registered Business since 2017 | Proprietor: Mr. Deepak R. Mehta</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Page Navigation System
+        const pages = {
+            'home': document.getElementById('home-page'),
+            'about': document.getElementById('about-page'),
+            'contact': document.getElementById('contact-page'),
+            'privacy': document.getElementById('privacy-page')
+        };
+        
+        const navLinks = document.querySelectorAll('.nav-link');
+        const footerNavLinks = document.querySelectorAll('.footer-nav-link');
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileNav = document.getElementById('mobileNav');
+        
+        // Function to show a specific page
+        function showPage(pageId) {
+            // Hide all pages
+            Object.values(pages).forEach(page => {
+                page.classList.add('hidden');
+            });
+            
+            // Show the selected page
+            pages[pageId].classList.remove('hidden');
+            
+            // Update active navigation links
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('data-page') === pageId) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Update active footer navigation links
+            footerNavLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('data-page') === pageId) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Close mobile menu if open
+            mobileNav.classList.remove('active');
+            mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            document.body.style.overflow = 'auto';
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+        
+        // Add click event listeners to navigation links
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const pageId = this.getAttribute('data-page');
+                showPage(pageId);
+            });
+        });
+        
+        // Add click event listeners to footer navigation links
+        footerNavLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const pageId = this.getAttribute('data-page');
+                showPage(pageId);
+            });
+        });
+        
+        // Add click event listeners to CTA buttons
+        document.querySelectorAll('.cta-button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                const pageId = this.getAttribute('data-page');
+                if (pageId) {
+                    e.preventDefault();
+                    showPage(pageId);
+                }
+            });
+        });
+        
+        // Mobile menu toggle
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileNav.classList.toggle('active');
+            if (mobileNav.classList.contains('active')) {
+                mobileMenuBtn.innerHTML = '<i class="fas fa-times"></i>';
+                document.body.style.overflow = 'hidden';
+            } else {
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!mobileNav.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
+                mobileNav.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Add click event listeners to mobile navigation links
+        document.querySelectorAll('.mobile-nav .nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const pageId = this.getAttribute('data-page');
+                showPage(pageId);
+            });
+        });
+        
+        // Contact form submission
+        const contactForm = document.getElementById('contactPageForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form data
+                const name = document.getElementById('contact-name').value;
+                const email = document.getElementById('contact-email').value;
+                const subject = document.getElementById('contact-subject').value;
+                
+                // Show success message
+                alert(`Thank you, ${name}! Your inquiry has been submitted successfully. We will contact you at ${email} within 24 hours.`);
+                contactForm.reset();
+            });
+        }
+        
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+                header.style.padding = '0';
+                document.querySelector('.header-container').style.padding = '12px 0';
+            } else {
+                header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08)';
+                header.style.padding = '0';
+                document.querySelector('.header-container').style.padding = '15px 0';
+            }
+        });
+        
+        // Stats counter animation
+        function animateStats() {
+            const statNumbers = document.querySelectorAll('.stat-number');
+            statNumbers.forEach(stat => {
+                const target = parseInt(stat.textContent);
+                let current = 0;
+                const increment = target / 50;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        stat.textContent = target + (stat.textContent.includes('+') ? '+' : '');
+                        clearInterval(timer);
+                    } else {
+                        stat.textContent = Math.floor(current) + (stat.textContent.includes('+') ? '+' : '');
+                    }
+                }, 30);
+            });
+        }
+        
+        // Trigger stats animation when in view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateStats();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        const statsSection = document.querySelector('.stats-container');
+        if (statsSection) {
+            observer.observe(statsSection);
+        }
+        
+        // Initialize with home page
+        showPage('home');
+    </script>
+</body>
+</html>
